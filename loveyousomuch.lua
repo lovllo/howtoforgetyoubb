@@ -1,4 +1,4 @@
--- FULL: Fyy Exploit — Hybrid (KeySystem + Username premium) + Auto-save Key & Config
+-- FULL: Voks Exploit — Hybrid (KeySystem + Username premium) + Auto-save Key & Config
 
 -- === Load Rayfield ===
 local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
@@ -6,13 +6,13 @@ local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
 -- === Key System ===
 local KeySystem = false
 local KeySettings = {
-    Title = "Fyy Key System",
+    Title = "Voks Key System",
     Subtitle = "Masukkan Key untuk akses",
     Note = "Ini Free Sc , Nak key? join discord.gg/94SaPbxn",
-    FileName = "Fyy",  -- file key tetap sama tiap run
+    FileName = "Voks",  -- file key tetap sama tiap run
     SaveKey = true,           -- simpan key otomatis
     GrabKeyFromSite = false,
-    Key = {"ATMINLGISAD","FYY-PREMIUM"},
+    Key = {"ATMINLGISAD","Voks-PREMIUM"},
     Callback = function(Key)
         return true
     end
@@ -21,16 +21,16 @@ local KeySettings = {
 -- === Configuration Saving Settings ===
 local ConfigurationSaving = {
     Enabled = true,
-    FolderName = "FyyConfigs",
-    FileName = "FyyExploitConfig"
+    FolderName = "VoksConfigs",
+    FileName = "VoksexploitConfig"
 }
 
 local Window = Rayfield:CreateWindow({
-   Name = "Fyy Exploit Menu",
+   Name = "Voks Exploit Menu",
    Icon = 0,
-   LoadingTitle = "Fyy Exploit Loader",
-   LoadingSubtitle = "by Fyy",
-   ShowText = "Fyy Exploit",
+   LoadingTitle = "Voks Exploit Loader",
+   LoadingSubtitle = "by Voks",
+   ShowText = "Voks Exploit",
    Theme = "Ocean",
    ToggleUIKeybind = Enum.KeyCode.K,
 
@@ -126,7 +126,7 @@ local premiumMenus = {
 
 }
 
-local accessLevel = "basic"
+local accessLevel = "premium"
 if allowedUsers[player.Name] then accessLevel = "premium" end
 
 -- === UI helper wrappers (respect basic/premium access) ===
