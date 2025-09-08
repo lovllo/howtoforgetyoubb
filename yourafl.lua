@@ -55,7 +55,7 @@ local StarterGui = game:GetService("StarterGui")
 
 -- === Access control: username premium, basic/premium menu lists ===
 local allowedUsers = {
-
+["IAMSURFER"] = true,
 }
 
 local basicMenus = {
