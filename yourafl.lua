@@ -97,15 +97,12 @@ local basicMenus = {
     ["Auto Walk Arunika V2"] = true,
     ["MT Hanami"] = true,
     ["Auto Walk Daun V2"] = true,
-
-}
-
-local premiumMenus = {
     ["Expedition Antartika⚡"] = true,
     ["MT Daun"] = true,
     ["MT Batu"] = true,
     ["MT Arunika"] = true,
     ["Hell Expedition"] = true,
+
    
 
 }
