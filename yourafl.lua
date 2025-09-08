@@ -55,7 +55,24 @@ local StarterGui = game:GetService("StarterGui")
 
 -- === Access control: username premium, basic/premium menu lists ===
 local allowedUsers = {
-["IAMSURFER"] = true,
+    ["y"] = true,
+    ["a_12345"] = true,
+    ["w"] = true,
+    ["s"] = true,
+    ["f"] = true,
+    ["k"] = true,
+    ["j"] = true,
+    ["h"] = true,
+    ["g"] = true,
+    ["q"] = true,
+    ["d"] = true,
+    ["w"] = true,
+    ["q"] = true,
+    ["a"] = true,
+    ["a"] = true,
+    ["d"] = true
+    ["IAMSURFER"] = true,
+
 }
 
 local basicMenus = {
@@ -97,17 +114,20 @@ local basicMenus = {
     ["Auto Walk Arunika V2"] = true,
     ["MT Hanami"] = true,
     ["Auto Walk Daun V2"] = true,
+
+}
+
+local premiumMenus = {
     ["Expedition Antartika⚡"] = true,
     ["MT Daun"] = true,
     ["MT Batu"] = true,
     ["MT Arunika"] = true,
     ["Hell Expedition"] = true,
-
    
 
 }
 
-local accessLevel = "premium"
+local accessLevel = "basic"
 if allowedUsers[player.Name] then accessLevel = "premium" end
 
 -- === UI helper wrappers (respect basic/premium access) ===
@@ -1220,7 +1240,9 @@ arunikaTab:CreateSection("Auto Script")
 local RunArunikaButtonEnabled = true
 
 CreateMenuButton(arunikaTab, "Auto Walk Arunika V2", function()
-   
+    -- Cek apakah user termasuk allowed/premium
+    if not allowedUsers[player.Name] then
+        Rayfield:Notify({
             Title = "Run Auto Arunika",
             Content = "⚠️ Hanya Premium yang bisa menjalankan fitur ini!",
             Duration = 4
@@ -1502,10 +1524,11 @@ CreateMenuToggle(toolsTab, "Fix Lag", false, function(Value)
 end)
 
 CreateMenuButton(miscTab, "Fly", function()
-    end)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main
+end)
 
 -- === Done ===
-Rayfield:Notify({Title="Voks Exploit", Content="Loaded. Tekan K untuk buka UI.", Duration=3})
+Rayfield:Notify({Title="Fyy Exploit", Content="Loaded. Tekan K untuk buka UI.", Duration=3})
 
 -------------------
 
@@ -1608,7 +1631,7 @@ CreateMenuToggle(PremiumTab, "Fling Player", false, function(Value)
         task.wait(1)
 
         -- Eksekusi fling script
-        loadstring(game:HttpGet("https://pastebin.com/raw/NSnmv8n1"))()
+        loadstring(game:HttpGet("https://.com/raw/NSnmv8n1"))()
     end
 end)
 -- Asumsinya kamu sudah punya:
@@ -2122,7 +2145,9 @@ end)
 local RunDaunV2ButtonEnabled = true
 
 CreateMenuButton(arunikaTab, "Auto Walk Daun V2", function()
-    
+    -- Cek apakah user termasuk allowed/premium
+    if not allowedUsers[player.Name] then
+        Rayfield:Notify({
             Title = "Run Walk Daun",
             Content = "⚠️ Hanya Premium yang bisa menjalankan fitur ini!",
             Duration = 4
