@@ -1220,9 +1220,7 @@ arunikaTab:CreateSection("Auto Script")
 local RunArunikaButtonEnabled = true
 
 CreateMenuButton(arunikaTab, "Auto Walk Arunika V2", function()
-    -- Cek apakah user termasuk allowed/premium
-    if not allowedUsers[player.Name] then
-        Rayfield:Notify({
+   
             Title = "Run Auto Arunika",
             Content = "⚠️ Hanya Premium yang bisa menjalankan fitur ini!",
             Duration = 4
@@ -2124,9 +2122,7 @@ end)
 local RunDaunV2ButtonEnabled = true
 
 CreateMenuButton(arunikaTab, "Auto Walk Daun V2", function()
-    -- Cek apakah user termasuk allowed/premium
-    if not allowedUsers[player.Name] then
-        Rayfield:Notify({
+    
             Title = "Run Walk Daun",
             Content = "⚠️ Hanya Premium yang bisa menjalankan fitur ini!",
             Duration = 4
