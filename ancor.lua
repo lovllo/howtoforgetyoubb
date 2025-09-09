@@ -1486,7 +1486,7 @@ CreateMenuToggle(toolsTab, "Fix Lag", false, function(Value)
 end)
 
 CreateMenuButton(miscTab, "Fly", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/lovllo/howtoforgetyou/main/iwanndss.lua"))()
 end)
 
 -- === Done ===
@@ -1972,5 +1972,25 @@ CreateMenuToggle(mountTab, "MT Konoha", false, function(Value)
         end
     end)
 end)
+-- Anti AFK Toggle (Rayfield) masuk PremiumTab
+local VirtualUser = game:GetService("VirtualUser")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local AntiAFKLoop = false
+
+CreateMenuToggle(PremiumTab, "Anti AFK", false, function(Value)
+    AntiAFKLoop = Value
+    if not Value then return end
+
+    task.spawn(function()
+        while AntiAFKLoop do
+            task.wait(60) -- tiap 60 detik
+            VirtualUser:CaptureController()
+            VirtualUser:ClickButton2(Vector2.new()) -- klik kanan kosong biar dianggap aktif
+        end
+    end)
+end)
+
 
 Rayfield:LoadConfiguration()
