@@ -1972,25 +1972,33 @@ CreateMenuToggle(mountTab, "MT Konoha", false, function(Value)
         end
     end)
 end)
--- Anti AFK Toggle (Rayfield) 
-local VirtualUser = game:GetService("VirtualUser")
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
-
-local AntiAFKLoop = false
+-- Anti AFK Toggle (Rayfield) setiap 60 detik
+local vu = game:GetService("VirtualUser")
+local antiAfkEnabled = false
 
 CreateMenuToggle(miscTab, "Anti AFK", false, function(Value)
-    AntiAFKLoop = Value
-    if not Value then return end
+    antiAfkEnabled = Value
+    if antiAfkEnabled then
+        Rayfield:Notify({
+            Title = "Anti AFK",
+            Content = "Anti AFK Activated (60s)",
+            Duration = 2
+        })
 
-    task.spawn(function()
-        while AntiAFKLoop do
-            task.wait(60) -- tiap 60 detik
-            VirtualUser:CaptureController()
-            VirtualUser:ClickButton2(Vector2.new()) -- klik kanan kosong biar dianggap aktif
-        end
-    end)
+        task.spawn(function()
+            while antiAfkEnabled do
+                task.wait(60)
+                vu:CaptureController()
+                vu:ClickButton2(Vector2.new())
+            end
+        end)
+    else
+        Rayfield:Notify({
+            Title = "Anti AFK",
+            Content = "Anti AFK Disabled",
+            Duration = 2
+        })
+    end
 end)
-
 
 Rayfield:LoadConfiguration()
