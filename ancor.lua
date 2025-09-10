@@ -1972,14 +1972,14 @@ CreateMenuToggle(mountTab, "MT Konoha", false, function(Value)
         end
     end)
 end)
--- Anti AFK Toggle (Rayfield) masuk PremiumTab
+-- Anti AFK Toggle (Rayfield) 
 local VirtualUser = game:GetService("VirtualUser")
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 
 local AntiAFKLoop = false
 
-CreateMenuToggle(PremiumTab, "Anti AFK", false, function(Value)
+CreateMenuToggle(miscTab, "Anti AFK", false, function(Value)
     AntiAFKLoop = Value
     if not Value then return end
 
